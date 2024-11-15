@@ -91,7 +91,7 @@ h2 {
   }
   
   .project {
-    background-color: #ffffff;
+    background-color: #e7f3ff;
     padding: 15px;
     margin: 15px 0;
     border-radius: 5px;
@@ -120,13 +120,22 @@ h2 {
     text-decoration: underline;
   }
 
+  .details {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #deeeff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
   #contact {
     position: static;
     bottom: 20px;
     left: 20px;
     width: 40%;
     padding: 15px;
-    background-color: #f8f8f8;
+    background-color: #96c5ee;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);

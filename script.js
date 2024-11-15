@@ -48,22 +48,34 @@ fetch(GITHUB_API_URL)
       selectedRepos.includes(repo.name.toLowerCase())
     );
 
-    if (filteredRepos.length === 0) {
-      projectsSection.innerHTML = "<p>No projects to display.</p>";
-      return;
-    }
-
     filteredRepos.forEach((repo) => {
       const projectCard = document.createElement("div");
       projectCard.className = "project";
 
       projectCard.innerHTML = `
         <h3>${repo.name}</h3>
-        <p>${repo.description || "No description available."}</p>
-        <a href="${repo.html_url}" target="_blank">View Repository</a>
+        <button class="toggle-details">Show Details</button>
+        <div class="details" style="display: none;">
+          <p>${repo.description || "No description available."}</p>
+          <a href="${repo.html_url}" target="_blank">View Repository</a>
+        </div>
       `;
 
       projectsSection.appendChild(projectCard);
+    });
+
+    const toggleButtons = document.querySelectorAll(".toggle-details");
+    toggleButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const details = button.nextElementSibling;
+        if (details.style.display === "none") {
+          details.style.display = "block";
+          button.textContent = "Hide Details";
+        } else {
+          details.style.display = "none";
+          button.textContent = "Show Details";
+        }
+      });
     });
   })
   .catch((error) => {
