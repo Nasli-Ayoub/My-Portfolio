@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Portfolio</title>
         <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
     </head>
 
     <body>
@@ -27,16 +28,24 @@
         </section>
         <section id="projects">
             <h2>My Projects</h2>
-            <div class="content-box">
-                <p>Coming Soon!</p>
-            </div>
-        </section>
+            <div id="project-list"></div>
+          </section>
         <section id="contact">
             <h2>Contact Me</h2>
-            <div class="content-box">
-                <p>Coming Soon!</p>
-            </div>
-        </section>
+            <form id="contact-form">
+              <label for="name">Name:</label>
+              <input type="text" id="name" placeholder="Your Name" required>
+              
+              <label for="email">Email:</label>
+              <input type="email" id="email" placeholder="Your Email" required>
+              
+              <label for="message">Message:</label>
+              <textarea id="message" placeholder="Your Message" required></textarea>
+              
+              <button type="submit">Send</button>
+            </form>
+            <p id="error-message" style="color: red; display: none;">Please fill out all fields correctly.</p>
+          </section>
 
         <footer>
             <p>&copy; 2024 Nasli Ayoub</p>
