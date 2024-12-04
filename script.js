@@ -38,9 +38,8 @@ fetch(GITHUB_API_URL)
   .then((response) => response.json())
   .then((repos) => {
     const selectedRepos = [
-      "form",
       "interactive-quiz",
-      "my-first-webpage",
+      "registration-form",
       "my-portfolio",
     ];
 
