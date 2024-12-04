@@ -40,6 +40,7 @@ fetch(GITHUB_API_URL)
     const selectedRepos = [
       "interactive-quiz",
       "registration-form",
+      "storage-assignment",
       "my-portfolio",
     ];
 
