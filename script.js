@@ -38,9 +38,20 @@ fetch(GITHUB_API_URL)
   .then((response) => response.json())
   .then((repos) => {
     const selectedRepos = [
+<<<<<<< HEAD
         "interactive-quiz",
         "registration-form",
         "storage-assignment"
+=======
+    {
+      name: "interactive-quiz",
+      image: "images/quiz-preview.png",
+      name: "registration-form",
+      image: "images/registration-form-preview.png",
+      name: "storage-assignment",
+      image: "images/storage-api-demo-preview.png",
+    }
+>>>>>>> 03acbf50fa53ab29c518950e74da3bb27f36c834
     ];
 
     const filteredRepos = repos.filter((repo) =>
@@ -52,12 +63,22 @@ fetch(GITHUB_API_URL)
       projectCard.className = "project";
 
       projectCard.innerHTML = `
+<<<<<<< HEAD
       <h3>${repo.name}</h3>
       <button class="toggle-details">Show Details</button>
       <div class="details" style="display: none;">
           <p>${repo.description || "No description available."}</p>
           <a href="${repo.html_url}" target="_blank">View Repository</a>
       </div>
+=======
+        <h3>${repo.name}</h3>
+        <img src="${selectedRepo.image}" alt="${repo.name} Preview" loading="lazy">
+        <button class="toggle-details">Show Details</button>
+        <div class="details" style="display: none;">
+          <p>${repo.description || "No description available."}</p>
+          <a href="${repo.html_url}" target="_blank">View Repository</a>
+        </div>
+>>>>>>> 03acbf50fa53ab29c518950e74da3bb27f36c834
       `;
 
       projectsSection.appendChild(projectCard);
