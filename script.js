@@ -38,10 +38,14 @@ fetch(GITHUB_API_URL)
   .then((response) => response.json())
   .then((repos) => {
     const selectedRepos = [
-      "interactive-quiz",
-      "registration-form",
-      "storage-assignment",
-      "my-portfolio",
+    {
+      name: "interactive-quiz",
+      image: "images/quiz-preview.png",
+      name: "registration-form",
+      image: "images/registration-form-preview.png",
+      name: "storage-assignment",
+      image: "images/storage-api-demo-preview.png",
+    }
     ];
 
     const filteredRepos = repos.filter((repo) =>
@@ -54,6 +58,7 @@ fetch(GITHUB_API_URL)
 
       projectCard.innerHTML = `
         <h3>${repo.name}</h3>
+        <img src="${selectedRepo.image}" alt="${repo.name} Preview" loading="lazy">
         <button class="toggle-details">Show Details</button>
         <div class="details" style="display: none;">
           <p>${repo.description || "No description available."}</p>
